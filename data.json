@@ -1,0 +1,23 @@
+[
+  {
+    "title": "Example: Welcome Post",
+    "description": "Introduce the team and mission.\nShare the story behind what we're building.\nKeep it personal and authentic.",
+    "medium": "Blog",
+    "timeline": "Near Term",
+    "tags": ["launch", "brand"]
+  },
+  {
+    "title": "Example: Explainer Video",
+    "description": "Break down the core product in 90 seconds.\nUse simple visuals, no jargon.\nEnd with a clear CTA.",
+    "medium": "Video",
+    "timeline": "Mid Term",
+    "tags": ["education", "product"]
+  },
+  {
+    "title": "Example: Community AMA",
+    "description": "Host a live Q&A session.\nCollect questions in advance.\nRecord and repurpose clips for social.",
+    "medium": "Event",
+    "timeline": "Long Term",
+    "tags": ["community", "engagement"]
+  }
+]
