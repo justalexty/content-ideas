@@ -3,216 +3,284 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Content Bible 🇲🇭</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Content Bible — MIDAO</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --ocean-deep: #0B1D3A;
-      --ocean-mid: #133C6D;
-      --lagoon: #1A6B8A;
-      --reef: #2EC4B6;
-      --sand: #F4E8C1;
-      --coral: #FF6B6B;
-      --sunset: #FF9F43;
-      --palm: #2D8A4E;
-      --foam: #E8F4F8;
-      --shell: #FFF8F0;
+      --bg: #0a0a0a;
+      --surface: #141414;
+      --surface-2: #1a1a1a;
+      --border: rgba(255,255,255,0.06);
+      --border-hover: rgba(255,255,255,0.12);
+      --text: #e8e8e8;
+      --text-secondary: rgba(255,255,255,0.5);
+      --accent: #3b82f6;
+      --accent-glow: rgba(59,130,246,0.15);
+      --near: #10b981;
+      --mid: #f59e0b;
+      --long: #ef4444;
     }
 
     body {
-      font-family: 'Inter', sans-serif;
-      background: linear-gradient(180deg, var(--ocean-deep) 0%, #0E2847 100%);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
       min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
     }
 
-    .wave-divider {
-      position: relative;
-      height: 60px;
-      overflow: hidden;
+    /* Header */
+    .header {
+      padding: 3rem 2rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      border-bottom: 1px solid var(--border);
     }
-    .wave-divider::before {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 200%;
-      height: 60px;
-      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 60'%3E%3Cpath d='M0 30 Q150 0 300 30 T600 30 T900 30 T1200 30 V60 H0Z' fill='%230E2847' opacity='0.3'/%3E%3C/svg%3E") repeat-x;
-      animation: wave 8s linear infinite;
+    .header-top {
+      display: flex;
+      align-items: baseline;
+      gap: 0.75rem;
+      margin-bottom: 0.5rem;
     }
-    @keyframes wave {
-      from { transform: translateX(0); }
-      to { transform: translateX(-50%); }
+    .header h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
     }
-
-    .card {
-      transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    .header .flag {
+      font-size: 1.25rem;
     }
-    .card:hover {
-      transform: translateY(-4px);
-    }
-    .card.hidden-card {
-      opacity: 0;
-      transform: scale(0.9);
-      position: absolute;
-      pointer-events: none;
+    .header p {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      letter-spacing: 0.02em;
     }
 
+    /* Toolbar */
+    .toolbar {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.25rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      border-bottom: 1px solid var(--border);
+    }
+    .filter-group {
+      display: flex;
+      align-items: center;
+      gap: 0.375rem;
+    }
+    .filter-group label {
+      font-size: 0.65rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-secondary);
+      margin-right: 0.25rem;
+    }
     .filter-btn {
-      transition: all 0.2s ease;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 500;
+      padding: 0.375rem 0.75rem;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .filter-btn:hover {
+      border-color: var(--border-hover);
+      color: var(--text);
+      background: var(--surface);
     }
     .filter-btn.active {
-      background: var(--reef);
-      color: var(--ocean-deep);
-      box-shadow: 0 0 20px rgba(46, 196, 182, 0.3);
+      background: var(--text);
+      color: var(--bg);
+      border-color: var(--text);
+    }
+    .count {
+      margin-left: auto;
+      font-size: 0.7rem;
+      color: var(--text-secondary);
+      font-variant-numeric: tabular-nums;
+    }
+    .divider {
+      width: 1px;
+      height: 20px;
+      background: var(--border);
     }
 
-    .timeline-badge {
-      font-size: 0.65rem;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      font-weight: 600;
-    }
-    .timeline-near { background: #2EC4B6; color: #0B1D3A; }
-    .timeline-mid { background: #FF9F43; color: #0B1D3A; }
-    .timeline-long { background: #FF6B6B; color: #fff; }
-
-    .medium-badge {
-      font-size: 0.65rem;
-      letter-spacing: 0.05em;
-      font-weight: 500;
-    }
-
-    .grid-container {
+    /* Grid */
+    .grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 2rem 4rem;
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 1.25rem;
-      transition: all 0.3s ease;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 1px;
+      background: var(--border);
     }
 
-    .count-badge {
-      background: rgba(46, 196, 182, 0.15);
-      border: 1px solid rgba(46, 196, 182, 0.3);
-      color: var(--reef);
+    /* Card */
+    .card {
+      background: var(--bg);
+      padding: 1.5rem;
+      transition: background 0.2s ease;
+    }
+    .card:hover {
+      background: var(--surface);
+    }
+    .card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.75rem;
+    }
+    .card h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      line-height: 1.3;
+      margin-bottom: 0.5rem;
+    }
+    .card p {
+      font-size: 0.8rem;
+      line-height: 1.6;
+      color: var(--text-secondary);
     }
 
-    /* Atoll-inspired decorative dots */
-    .atoll-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: rgba(46, 196, 182, 0.4);
-      display: inline-block;
+    /* Badges */
+    .badge {
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+    }
+    .badge-near { background: rgba(16,185,129,0.12); color: #34d399; }
+    .badge-mid { background: rgba(245,158,11,0.12); color: #fbbf24; }
+    .badge-long { background: rgba(239,68,68,0.12); color: #f87171; }
+    .badge-medium {
+      font-size: 0.6rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      color: var(--text-secondary);
+    }
+
+    /* Empty */
+    .empty {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 4rem 2rem;
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+      background: var(--bg);
+    }
+    .empty.hidden { display: none; }
+
+    /* Search */
+    .search-input {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      padding: 0.4rem 0.75rem;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text);
+      outline: none;
+      width: 180px;
+      transition: border-color 0.15s;
+    }
+    .search-input::placeholder { color: var(--text-secondary); }
+    .search-input:focus { border-color: rgba(255,255,255,0.2); }
+
+    @media (max-width: 768px) {
+      .header { padding: 2rem 1.25rem 1.5rem; }
+      .toolbar { padding: 1rem 1.25rem; gap: 1rem; }
+      .grid { padding: 0 0 3rem; grid-template-columns: 1fr; }
+      .card { padding: 1.25rem; }
+      .count { margin-left: 0; }
+      .search-input { width: 100%; }
     }
   </style>
 </head>
-<body class="text-white">
+<body>
 
-  <!-- Header -->
-  <header class="pt-10 pb-6 px-6 text-center relative">
-    <div class="max-w-4xl mx-auto">
-      <p class="text-sm tracking-[0.3em] uppercase mb-3" style="color: var(--reef);">🇲🇭 Marshall Islands</p>
-      <h1 class="text-4xl md:text-5xl font-bold mb-3" style="font-family: 'Playfair Display', serif; color: var(--sand);">
-        Content Bible
-      </h1>
-      <p class="text-base opacity-60 max-w-lg mx-auto">Ideas across the horizon. Filter by timeline or medium.</p>
+  <div class="header">
+    <div class="header-top">
+      <h1>Content Bible</h1>
+      <span class="flag">🇲🇭</span>
     </div>
-    <div class="wave-divider mt-6"></div>
-  </header>
+    <p>Strategy · Ideas · Pipeline</p>
+  </div>
 
-  <!-- Filters -->
-  <section class="px-6 pb-8">
-    <div class="max-w-6xl mx-auto">
-      <div class="flex flex-wrap gap-6 justify-center items-start">
-        <!-- Timeline filters -->
-        <div class="flex flex-col items-center gap-2">
-          <span class="text-xs uppercase tracking-widest opacity-40">Timeline</span>
-          <div class="flex flex-wrap gap-2">
-            <button class="filter-btn active px-4 py-1.5 rounded-full text-sm border border-white/10 bg-white/5" data-filter="timeline" data-value="all">All</button>
-            <button class="filter-btn px-4 py-1.5 rounded-full text-sm border border-white/10 bg-white/5" data-filter="timeline" data-value="Near Term">Near</button>
-            <button class="filter-btn px-4 py-1.5 rounded-full text-sm border border-white/10 bg-white/5" data-filter="timeline" data-value="Mid Term">Mid</button>
-            <button class="filter-btn px-4 py-1.5 rounded-full text-sm border border-white/10 bg-white/5" data-filter="timeline" data-value="Long Term">Long</button>
-          </div>
-        </div>
-
-        <div class="atoll-dot self-center mt-5"></div>
-
-        <!-- Medium filters -->
-        <div class="flex flex-col items-center gap-2">
-          <span class="text-xs uppercase tracking-widest opacity-40">Medium</span>
-          <div id="medium-filters" class="flex flex-wrap gap-2">
-            <button class="filter-btn active px-4 py-1.5 rounded-full text-sm border border-white/10 bg-white/5" data-filter="medium" data-value="all">All</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Count -->
-      <div class="text-center mt-5">
-        <span id="count" class="count-badge text-xs px-3 py-1 rounded-full"></span>
-      </div>
+  <div class="toolbar">
+    <div class="filter-group">
+      <label>Timeline</label>
+      <button class="filter-btn active" data-filter="timeline" data-value="all">All</button>
+      <button class="filter-btn" data-filter="timeline" data-value="Near Term">Near</button>
+      <button class="filter-btn" data-filter="timeline" data-value="Mid Term">Mid</button>
+      <button class="filter-btn" data-filter="timeline" data-value="Long Term">Long</button>
     </div>
-  </section>
+    <div class="divider"></div>
+    <div class="filter-group" id="medium-filters">
+      <label>Medium</label>
+      <button class="filter-btn active" data-filter="medium" data-value="all">All</button>
+    </div>
+    <div class="divider"></div>
+    <input type="text" class="search-input" id="search" placeholder="Search…">
+    <span class="count" id="count"></span>
+  </div>
 
-  <!-- Cards -->
-  <main class="px-6 pb-20">
-    <div id="cards" class="grid-container max-w-6xl mx-auto"></div>
-    <p id="empty" class="text-center opacity-40 mt-16 hidden">No ideas match these filters. Try a different combination.</p>
-  </main>
+  <div class="grid" id="cards"></div>
 
   <script>
     let ideas = [];
     let activeTimeline = 'all';
     let activeMedium = 'all';
+    let searchQuery = '';
 
-    const timelineClass = {
-      'Near Term': 'timeline-near',
-      'Mid Term': 'timeline-mid',
-      'Long Term': 'timeline-long',
-    };
+    const tlBadge = { 'Near Term': 'badge-near', 'Mid Term': 'badge-mid', 'Long Term': 'badge-long' };
 
-    const mediumEmoji = {
-      'Blog': '✍️',
-      'Video': '🎬',
-      'Social': '📱',
-      'Podcast': '🎙️',
-      'Email': '📧',
-      'Event': '🎪',
-      'Thread': '🧵',
-      'Infographic': '📊',
-      'Newsletter': '📬',
-    };
-
-    function renderCards() {
-      const container = document.getElementById('cards');
-      const empty = document.getElementById('empty');
-      const countEl = document.getElementById('count');
-
-      const filtered = ideas.filter(idea => {
-        const matchTimeline = activeTimeline === 'all' || idea.timeline === activeTimeline;
-        const matchMedium = activeMedium === 'all' || idea.medium === activeMedium;
-        return matchTimeline && matchMedium;
+    function render() {
+      const filtered = ideas.filter(i => {
+        if (activeTimeline !== 'all' && i.timeline !== activeTimeline) return false;
+        if (activeMedium !== 'all' && i.medium !== activeMedium) return false;
+        if (searchQuery) {
+          const q = searchQuery.toLowerCase();
+          return i.title.toLowerCase().includes(q) || i.description.toLowerCase().includes(q) ||
+            (i.tags || []).some(t => t.toLowerCase().includes(q));
+        }
+        return true;
       });
 
-      countEl.textContent = `${filtered.length} idea${filtered.length !== 1 ? 's' : ''}`;
-      empty.classList.toggle('hidden', filtered.length > 0);
+      document.getElementById('count').textContent = filtered.length + ' item' + (filtered.length !== 1 ? 's' : '');
+      const container = document.getElementById('cards');
 
-      container.innerHTML = filtered.map(idea => {
-        const tlClass = timelineClass[idea.timeline] || 'timeline-near';
-        const emoji = mediumEmoji[idea.medium] || '📄';
-        const desc = idea.description.replace(/\n/g, '<br>');
+      if (!filtered.length) {
+        container.innerHTML = '<div class="empty">No items match these filters.</div>';
+        return;
+      }
 
-        return `
-          <div class="card rounded-xl p-5 border border-white/8" style="background: linear-gradient(135deg, rgba(19,60,109,0.6) 0%, rgba(11,29,58,0.8) 100%); backdrop-filter: blur(10px);">
-            <div class="flex items-center justify-between mb-3">
-              <span class="timeline-badge ${tlClass} px-2.5 py-0.5 rounded-full">${idea.timeline}</span>
-              <span class="medium-badge px-2.5 py-1 rounded-full bg-white/10 text-white/70">${emoji} ${idea.medium}</span>
-            </div>
-            <h3 class="text-lg font-semibold mb-2" style="color: var(--sand);">${idea.title}</h3>
-            <p class="text-sm leading-relaxed opacity-70">${desc}</p>
+      container.innerHTML = filtered.map(i => {
+        const cls = tlBadge[i.timeline] || 'badge-near';
+        const desc = i.description.replace(/\n/g, '<br>');
+        return `<div class="card">
+          <div class="card-header">
+            <span class="badge ${cls}">${i.timeline}</span>
+            <span class="badge-medium">${i.medium}</span>
           </div>
-        `;
+          <h3>${i.title}</h3>
+          <p>${desc}</p>
+        </div>`;
       }).join('');
     }
 
@@ -221,10 +289,10 @@
       const container = document.getElementById('medium-filters');
       mediums.forEach(m => {
         const btn = document.createElement('button');
-        btn.className = 'filter-btn px-4 py-1.5 rounded-full text-sm border border-white/10 bg-white/5';
+        btn.className = 'filter-btn';
         btn.dataset.filter = 'medium';
         btn.dataset.value = m;
-        btn.textContent = `${mediumEmoji[m] || '📄'} ${m}`;
+        btn.textContent = m;
         container.appendChild(btn);
       });
     }
@@ -232,32 +300,24 @@
     document.addEventListener('click', e => {
       const btn = e.target.closest('.filter-btn');
       if (!btn) return;
-
-      const filterType = btn.dataset.filter;
-      const value = btn.dataset.value;
-
-      // Update active state
-      document.querySelectorAll(`.filter-btn[data-filter="${filterType}"]`).forEach(b => b.classList.remove('active'));
+      const type = btn.dataset.filter, val = btn.dataset.value;
+      document.querySelectorAll(`.filter-btn[data-filter="${type}"]`).forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-
-      if (filterType === 'timeline') activeTimeline = value;
-      if (filterType === 'medium') activeMedium = value;
-
-      renderCards();
+      if (type === 'timeline') activeTimeline = val;
+      if (type === 'medium') activeMedium = val;
+      render();
     });
 
-    // Load data
-    fetch('data.json')
-      .then(r => r.json())
-      .then(data => {
-        ideas = data;
-        buildMediumFilters();
-        renderCards();
-      })
-      .catch(err => {
-        console.error('Failed to load data:', err);
-        document.getElementById('cards').innerHTML = '<p class="text-center opacity-40 col-span-full">Failed to load content ideas.</p>';
-      });
+    document.getElementById('search').addEventListener('input', e => {
+      searchQuery = e.target.value;
+      render();
+    });
+
+    fetch('data.json').then(r => r.json()).then(data => {
+      ideas = data;
+      buildMediumFilters();
+      render();
+    });
   </script>
 </body>
 </html>
