@@ -298,8 +298,8 @@
       <button class="filter-btn active" data-filter="medium" data-value="all">All</button>
     </div>
     <div class="search-wrap">
-      <input type="text" class="search-input" id="search" placeholder="Search…">
-      <span class="count" id="count"></span>
+      <button id="search-toggle" style="background:none;border:1px solid var(--glass-border);padding:0.45rem 0.6rem;cursor:pointer;color:var(--text-dim);font-size:0.85rem;transition:all 0.2s" onclick="toggleSearch()">🔍</button>
+      <input type="text" class="search-input" id="search" placeholder="Search…" style="display:none">
     </div>
   </div>
 
@@ -325,7 +325,7 @@
         }
         return true;
       });
-      document.getElementById('count').textContent = filtered.length + ' item' + (filtered.length !== 1 ? 's' : '');
+      /* count removed */
       const c = document.getElementById('cards');
       if (!filtered.length) { c.innerHTML = '<div class="empty">No items match.</div>'; return; }
       c.innerHTML = filtered.map(i => `<div class="card">
@@ -360,6 +360,23 @@
     });
 
     document.getElementById('search').addEventListener('input', e => { searchQuery = e.target.value; render(); });
+    function toggleSearch() {
+      const inp = document.getElementById('search');
+      const btn = document.getElementById('search-toggle');
+      if (inp.style.display === 'none') {
+        inp.style.display = '';
+        inp.focus();
+        btn.style.color = 'var(--sand)';
+        btn.style.borderColor = 'rgba(46,196,182,0.4)';
+      } else {
+        inp.style.display = 'none';
+        inp.value = '';
+        searchQuery = '';
+        render();
+        btn.style.color = 'var(--text-dim)';
+        btn.style.borderColor = 'var(--glass-border)';
+      }
+    }
 
     fetch('data.json').then(r => r.json()).then(d => { ideas = d; buildMediumFilters(); render(); });
   </script>
