@@ -1,8 +1,8 @@
 [
  {
     "title": "Quarterly Newsletter",
-    "description": "Rather than sending a perfunctory weekly email to go unopened like all other boring newsletters, publish a quarterly zine with beautiful production value and in-depth features.\n\nOpen with a "Letter from the Editor" by the CEO. Feature a MIDAO client in each issue with a fawning interview like it's a glossy magazine. Showcase MIDAO's latest public service to the islands with a photo spread.\n\nFinish with a hyperlinked roundup of all MIDAO content since the last issue. (Optional: offer print editions to all current MIDAO clients.)",
-    "medium": "Video",
+    "description": "Rather than sending a perfunctory weekly email to go unopened like all other boring newsletters, publish a quarterly zine with beautiful production value and in-depth features.\n\nOpen with a "Letter from the Editor" by the CEO. Feature a MIDAO client in each issue with a fawning interview like it's a glossy magazine. Showcase MIDAO's latest public service to the islands with a photo spread.\n\nFinish with a hyperlinked roundup of all MIDAO content since the last issue. Optional: offer print editions to all current MIDAO clients.",
+    "medium": "Text",
     "timeline": "Mid Term",
     "tags": ["education", "product"]
   },
