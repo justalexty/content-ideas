@@ -19,5 +19,68 @@
     "medium": "Event",
     "timeline": "Long Term",
     "tags": ["community", "engagement"]
+  },
+  {
+    "title": "Placeholder 4",
+    "description": "Edit this card with your content.\nReplace title, description, medium, and timeline.",
+    "medium": "Blog",
+    "timeline": "Near Term",
+    "tags": ["placeholder"]
+  },
+  {
+    "title": "Placeholder 5",
+    "description": "Edit this card with your content.\nReplace title, description, medium, and timeline.",
+    "medium": "Video",
+    "timeline": "Near Term",
+    "tags": ["placeholder"]
+  },
+  {
+    "title": "Placeholder 6",
+    "description": "Edit this card with your content.\nReplace title, description, medium, and timeline.",
+    "medium": "Social",
+    "timeline": "Mid Term",
+    "tags": ["placeholder"]
+  },
+  {
+    "title": "Placeholder 7",
+    "description": "Edit this card with your content.\nReplace title, description, medium, and timeline.",
+    "medium": "Blog",
+    "timeline": "Mid Term",
+    "tags": ["placeholder"]
+  },
+  {
+    "title": "Placeholder 8",
+    "description": "Edit this card with your content.\nReplace title, description, medium, and timeline.",
+    "medium": "Event",
+    "timeline": "Near Term",
+    "tags": ["placeholder"]
+  },
+  {
+    "title": "Placeholder 9",
+    "description": "Edit this card with your content.\nReplace title, description, medium, and timeline.",
+    "medium": "Video",
+    "timeline": "Long Term",
+    "tags": ["placeholder"]
+  },
+  {
+    "title": "Placeholder 10",
+    "description": "Edit this card with your content.\nReplace title, description, medium, and timeline.",
+    "medium": "Social",
+    "timeline": "Long Term",
+    "tags": ["placeholder"]
+  },
+  {
+    "title": "Placeholder 11",
+    "description": "Edit this card with your content.\nReplace title, description, medium, and timeline.",
+    "medium": "Blog",
+    "timeline": "Long Term",
+    "tags": ["placeholder"]
+  },
+  {
+    "title": "Placeholder 12",
+    "description": "Edit this card with your content.\nReplace title, description, medium, and timeline.",
+    "medium": "Event",
+    "timeline": "Mid Term",
+    "tags": ["placeholder"]
   }
 ]
