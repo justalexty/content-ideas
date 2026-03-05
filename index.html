@@ -9,21 +9,16 @@
         @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
-            --deep: #091a30;
-            --lagoon: #1a6b8a;
-            --sand: #f4e8c1;
-            --gold: #c9a84c;
-            --coral: #e8655a;
-            --glass: rgba(255,255,255,0.06);
-            --glass-border: rgba(255,255,255,0.1);
-            --text: #f0ece4;
-            --text-dim: rgba(240,236,228,0.5);
+            --deep: #0b1620;
+            --glass: rgba(255,255,255,0.035);
+            --glass-border: rgba(255,255,255,0.06);
+            --text: rgba(220,216,210,0.75);
+            --text-dim: rgba(200,196,190,0.3);
+            --accent: rgba(180,172,155,0.5);
         }
         html, body { height: 100%; }
         body {
             background: var(--deep);
-            background-image: radial-gradient(ellipse at 30% 20%, rgba(26,107,138,0.15) 0%, transparent 50%),
-                              radial-gradient(ellipse at 70% 80%, rgba(201,168,76,0.08) 0%, transparent 50%);
             font-family: 'Inter', -apple-system, sans-serif;
             display: flex;
             align-items: center;
@@ -33,73 +28,68 @@
         }
         .gate {
             background: var(--glass);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
             border: 1px solid var(--glass-border);
-            padding: 50px 45px;
-            width: 400px;
+            padding: 44px 40px;
+            width: 340px;
             text-align: center;
         }
         h1 {
-            color: var(--sand);
+            color: var(--text);
             font-family: 'Bodoni Moda', serif;
-            font-size: 2em;
-            font-weight: 700;
-            letter-spacing: 2px;
-            margin-bottom: 8px;
-        }
-        .sub {
-            color: var(--text-dim);
-            font-size: 0.85em;
-            font-weight: 300;
-            letter-spacing: 1px;
-            margin-bottom: 30px;
+            font-size: 1.4em;
+            font-weight: 400;
+            letter-spacing: 3px;
+            margin-bottom: 0;
         }
         .divider {
             border: none;
             border-top: 1px solid var(--glass-border);
-            margin-bottom: 30px;
+            margin: 24px 0;
         }
         input[type="password"] {
             width: 100%;
-            padding: 15px;
-            background: var(--glass);
+            padding: 11px 14px;
+            background: rgba(255,255,255,0.025);
             border: 1px solid var(--glass-border);
             color: var(--text);
             font-family: 'Inter', sans-serif;
-            font-size: 16px;
-            letter-spacing: 2px;
+            font-size: 13px;
+            letter-spacing: 1.5px;
             outline: none;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
         }
         input[type="password"]::placeholder {
             color: var(--text-dim);
-            letter-spacing: 2px;
+            letter-spacing: 1.5px;
         }
         input[type="password"]:focus {
-            border-color: rgba(201,168,76,0.4);
+            border-color: rgba(255,255,255,0.12);
         }
         button {
             width: 100%;
-            padding: 15px;
-            background: var(--gold);
-            border: none;
-            color: var(--deep);
+            padding: 11px;
+            background: rgba(255,255,255,0.045);
+            border: 1px solid var(--glass-border);
+            color: var(--accent);
             font-family: 'Inter', sans-serif;
-            font-size: 0.85em;
-            font-weight: 600;
-            letter-spacing: 3px;
+            font-size: 0.7em;
+            font-weight: 500;
+            letter-spacing: 4px;
             text-transform: uppercase;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
         }
         button:hover {
-            background: var(--sand);
+            background: rgba(255,255,255,0.07);
+            color: var(--text);
+            border-color: rgba(255,255,255,0.1);
         }
         .error {
-            color: var(--coral);
-            font-size: 0.85em;
-            margin-top: 15px;
+            color: rgba(200,120,110,0.6);
+            font-size: 0.75em;
+            margin-top: 14px;
             display: none;
             letter-spacing: 1px;
         }
@@ -108,13 +98,13 @@
             align-items: center;
             justify-content: center;
             color: var(--text-dim);
-            font-size: 0.8em;
+            font-size: 0.7em;
             font-weight: 300;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
             cursor: pointer;
             letter-spacing: 1px;
         }
-        label input { margin-right: 10px; }
+        label input { margin-right: 8px; opacity: 0.4; }
     </style>
 </head>
 <body>
