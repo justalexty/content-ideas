@@ -340,7 +340,7 @@
       c.innerHTML = filtered.map(i => `<div class="card">
         <div class="card-meta">
           <span class="badge ${tlClass[i.timeline]||'badge-near'}">${i.timeline}</span>
-          ${(Array.isArray(i.medium) ? i.medium : [i.medium]).map(m => `<span class="badge-medium">${m}</span>`).join('')}
+          <span style="display:flex;gap:6px">${(Array.isArray(i.medium) ? i.medium : [i.medium]).map(m => `<span class="badge-medium">${m}</span>`).join('')}</span>
         </div>
         <h3>${i.title}</h3>
         <p>${i.description.replace(/\n/g,'<br>')}</p>
