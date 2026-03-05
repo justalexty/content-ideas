@@ -1,5 +1,5 @@
 [
- {
+  {
     "title": "Quarterly Newsletter",
     "description": "Rather than sending a perfunctory weekly email to go unopened like all other boring newsletters, publish a quarterly zine with beautiful production value and in-depth features.\n\nOpen with a \"Letter from the Editor\" by the CEO. Feature a MIDAO client in each issue with a fawning interview like it's a glossy magazine. Showcase MIDAO's latest public service to the islands with a photo spread.\n\nFinish with a hyperlinked roundup of all MIDAO content since the last issue. (Optional: offer print editions to current MIDAO clients.)",
     "medium": "Print",
@@ -37,7 +37,7 @@
   },
   {
     "title": "Atoll Adventure",
-    "description": "Engage both viewers and the local Marshall Islands community by staging a competition show wherein one XOXO postcard has been hidden on each inhabited atoll, and local teams compete to collect the most.\n\nAlternatively, a show version of XOXO can be produced basically anywhere.",
+    "description": "Engage both viewers and the local Marshall Islands community by staging a competition show wherein one XOXO postcard has been hidden on each inhabited atoll, and 4 local teams compete to collect the most.\n\nAlternatively, a competition show version of XOXO can be produced basically anywhere.",
     "medium": "AV",
     "timeline": "Long Term"
   },
@@ -48,27 +48,30 @@
     "timeline": "Mid Term"
   },
   {
-    "title": "Legal-ease: Dispatches from the Marshall Islands",
-    "description": "A substack geared toward regulatory professionals. Open with a cheerful note from the compliance officer, feature a brief client interview about how hassle-free their operations are courtesy of choosing a Marshall Islands DLLC, and pepper pleasant snapshots of the islands throughout. Prime opportunity for SEO magic, too.",
+    "title": "Legal-ease",
+    "description": "Edit this card with your content.\nReplace title, description, medium, and timeline.",
     "medium": "Print",
-    "timeline": "Near Term"
-  },
-  {
-    "title": "Island Time",
-    "description": "Recurring livestream simulcast to all relevant social channels. The topic is flexible—format holds the key for impact. Each livestream will take a listenership snapshot and award a small airdrop (USDM1?) to one listener chosen at random. At the end of the year, the listener snapshots are used to award a grand prize (Marshall Islands getaway?) to one random repeat listener.",
-    "medium": "AV",
     "timeline": "Mid Term"
   },
   {
+    "title": "Placeholder 9",
+    "description": "Edit this card with your content.\nReplace title, description, medium, and timeline.",
+    "medium": "AV",
+    "timeline": "Long Term"
+  },
+  {
     "title": "Anonference",
-    "description": "Intriguing satellite event to stage around the big crypto conferences like Devcon. Host a fun, phone-free mixer highlighting MIDAO's unique status as the most anon-friendly DAO structure. Provide branded faraday bags as merch—with mandatory use for entry. Even the doxxed will relish an event where everyone is living in the moment.\n\nIn the long run, it could be possible to host a standalone Anonference in various cities or even the Marshall Islands ICC itself.",
+    "description": "Edit this card with your content.\nReplace title, description, medium, and timeline.",
     "medium": "Event",
     "timeline": "Long Term"
   },
   {
     "title": "Public Service",
-    "description": "Over time, MIDAO should contribute to public service projects in the Marshall Islands. Anything and everything from helping fund beach cleanups and afterschool activities, to establishing local pro bono coding courses or a free electric shuttle service.\n\nWe can then highlight these efforts in the quarterly newsletter or via short form videos for social channels.",
-    "medium": "AV",
-    "timeline": "Long Term"
+    "description": "Edit this card with your content.\nReplace title, description, medium, and timeline.",
+    "medium": [
+      "Print",
+      "AV"
+    ],
+    "timeline": "Mid Term"
   }
 ]

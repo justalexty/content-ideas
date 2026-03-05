@@ -326,7 +326,7 @@
     function render() {
       const filtered = ideas.filter(i => {
         if (activeTimeline !== 'all' && i.timeline !== activeTimeline) return false;
-        if (activeMedium !== 'all' && i.medium !== activeMedium) return false;
+        if (activeMedium !== 'all') { const m = Array.isArray(i.medium) ? i.medium : [i.medium]; if (!m.includes(activeMedium)) return false; }
         if (searchQuery) {
           const q = searchQuery.toLowerCase();
           return i.title.toLowerCase().includes(q) || i.description.toLowerCase().includes(q) ||
@@ -340,7 +340,7 @@
       c.innerHTML = filtered.map(i => `<div class="card">
         <div class="card-meta">
           <span class="badge ${tlClass[i.timeline]||'badge-near'}">${i.timeline}</span>
-          <span class="badge-medium">${i.medium}</span>
+          ${(Array.isArray(i.medium) ? i.medium : [i.medium]).map(m => `<span class="badge-medium">${m}</span>`).join('')}
         </div>
         <h3>${i.title}</h3>
         <p>${i.description.replace(/\n/g,'<br>')}</p>
@@ -349,7 +349,8 @@
 
     function buildMediumFilters() {
       const order = ['Print','AV','Event'];
-      const mediums = order.filter(m => ideas.some(i => i.medium === m)).concat([...new Set(ideas.map(i => i.medium))].filter(m => !order.includes(m)).sort());
+      const allMediums = ideas.flatMap(i => Array.isArray(i.medium) ? i.medium : [i.medium]);
+      const mediums = order.filter(m => allMediums.includes(m)).concat([...new Set(allMediums)].filter(m => !order.includes(m)).sort());
       const el = document.getElementById('medium-filters');
       mediums.forEach(m => {
         const btn = document.createElement('button');
