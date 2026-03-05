@@ -6,6 +6,12 @@
     "timeline": "Mid Term",
     "tags": ["email", "publication"]
   },
+ {
+    "title": "DAO It Yourself",
+    "description": "Edit this card with your content.\nReplace title, description, medium, and timeline.",
+    "medium": "Print",
+    "timeline": "Long Term"
+  },
   {
     "title": "Taste Test",
     "description": "Instead of a dry, dime-a-dozen podcast format, have guests on to discuss their work (and ours) over a cooking challenge. Each episode, a Marshall Islander will submit a traditional recipe, and our onscreen team will attempt to recreate it.\n\nFor best results, film in NYC (lots of industry guests at hand) and have someone from the Marshall Islands Permanent Mission judge the final result.\n\nPerforming an activity engages the audience's mirror neurons in a way that podcasts do not. This is also a nice way to involve the local community back home.",
@@ -66,13 +72,6 @@
     "title": "Placeholder 10",
     "description": "Edit this card with your content.\nReplace title, description, medium, and timeline.",
     "medium": "AV",
-    "timeline": "Long Term",
-    "tags": ["placeholder"]
-  },
-  {
-    "title": "Placeholder 11",
-    "description": "Edit this card with your content.\nReplace title, description, medium, and timeline.",
-    "medium": "Print",
     "timeline": "Long Term",
     "tags": ["placeholder"]
   },
